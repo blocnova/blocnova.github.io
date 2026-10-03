@@ -1,0 +1,11 @@
+# Repli de routage côté client, pour Netlify et Cloudflare Pages.
+#
+# expo-router écrit ses routes côté client : /interventions/<id> n'existe pas
+# comme fichier. Sans cette règle, rafraîchir une page profonde renvoie une 404
+# de l'hébergeur, et le personnel qui garde un onglet ouvert sur une
+# intervention le découvre au pire moment.
+#
+# GitHub Pages n'a pas de règles de réécriture — d'où la copie de index.html en
+# 404.html dans le workflow. Netlify et Cloudflare, eux, lisent ce fichier et
+# servent la coquille avec un vrai 200.
+/*  /index.html  200
