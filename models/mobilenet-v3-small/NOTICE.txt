@@ -1,0 +1,9 @@
+MobileNetV3-Small 1.0 224, ImageNet feature vector (1 024 values), TensorFlow.js graph model.
+
+Source   https://www.kaggle.com/models/google/mobilenet-v3  (tfJs / small-100-224-feature-vector / 1)
+Authors  Google (Howard et al., "Searching for MobileNetV3", 2019)
+Licence  Apache License 2.0  https://www.apache.org/licenses/LICENSE-2.0
+
+Unmodified. Bundled so that instrument recognition needs no internet: the
+application loads these files from the server that serves it, and runs the
+model in the browser. Input 224 x 224 x 3 in [0, 1]; output 1 024 floats.
