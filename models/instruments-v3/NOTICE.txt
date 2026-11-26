@@ -1,0 +1,96 @@
+BlocNova instruments v3 — MobileNetV3-Small 1.0 224 retrained on photos of surgical
+instruments. TensorFlow.js graph model: input 224 x 224 x 3 in [0, 1], output 1 024 floats.
+
+Base model
+  MobileNetV3-Small 1.0 224, ImageNet feature vector, TensorFlow.js
+  https://www.kaggle.com/models/google/mobilenet-v3  (tfJs / small-100-224-feature-vector / 1)
+  Google (Howard et al., "Searching for MobileNetV3", 2019). Apache License 2.0
+  https://www.apache.org/licenses/LICENSE-2.0
+
+Changes (17/10/2026, v3)
+  Same graph, same input and output. The weights were retrained (fine-tuned) by
+  ml/instruments/entrainer.py of the BlocNova repository; the first four layers are
+  unchanged. This model is distributed under the Apache License 2.0, like the base model.
+
+Photos the weights were retrained on (each licence allows commercial use)
+  - "surgical-jhjsm", Roboflow Universe workspace deva-9h2aw,
+    https://universe.roboflow.com/deva-9h2aw/surgical-jhjsm — CC BY 4.0
+    https://creativecommons.org/licenses/by/4.0/ (cropped, resized, augmented).
+  - "UR5_Scrub_Nurse" v9, Roboflow Universe workspace robotia,
+    https://universe.roboflow.com/robotia/ur5_scrub_nurse — CC BY 4.0
+    (cropped, resized, augmented).
+  - "Labeled Surgical Tools and Images", D. Lavado, Kaggle dilavado/labeled-surgical-tools.
+    Contains information from that database, made available under the
+    Open Database License 1.0 https://opendatacommons.org/licenses/odbl/1-0/
+  - "Surgical Tools Dataset" v2, Roboflow Universe workspace surgical-tools,
+    https://universe.roboflow.com/surgical-tools/surgical-tools-dataset — CC BY 4.0
+    (cropped, resized, augmented).
+  - "Automated Recognition of Surgical Instruments", Kaggle pepechuycg — CC BY-SA 4.0
+    https://creativecommons.org/licenses/by-sa/4.0/ . Insofar as these weights are an
+    adaptation of those photos, they are shared under CC BY-SA 4.0 as well.
+  - "SURGICAL TOOLS", S. Reddy, Mendeley Data, doi:10.17632/cyghvmjrt3.1 — CC BY-ND 4.0,
+    80 % of its photos used to train (no photo, crop or print of it is distributed).
+  - Six more Roboflow Universe sets, each CC BY 4.0 (cropped, resized, augmented):
+    "plastic surgery instruments" (surgical-instruments/plastic-surgery-instruments v18),
+    "Surgical tools" (surgical-tools-zm293/surgical-tools-isqzi v1),
+    "instruments" (yui-o9ay7/instruments-ovmfr v4),
+    "Identify Surgical Instruments" (surgical-instrument-tracker-and-identifier-siti v1),
+    "ASTRA Surgical Instruments" (astra-juyrg/astra-surgical-instruments-erspj v12),
+    "surgical-instruments-rsi" (s-workspace-wmaw6/surgical-instruments-rsi v6),
+    and the classes of "surgical tools" (shibashis/surgical-tools-8pne2 v1) that are not
+    Lavado's photos again. All at https://universe.roboflow.com/<workspace>/<project>.
+  - "Surgical Tool Recognition Full Multiview", joonhaim, Hugging Face
+    joonhaim/surgical-tool-recognition-full-multiview — MIT License: permission is
+    granted free of charge to use, copy, modify, merge, publish, distribute,
+    sublicense and/or sell copies; the software is provided "as is", without warranty
+    of any kind.
+
+Single photos from Wikimedia Commons and Flickr (via Openverse), each under its own licence:
+  - https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%B6%D0%B8%D0%BC_%D0%BA%D0%BE%D1%85%D0%B5%D1%80%D0%B0.jpg — Mikhail Vdovin, Public domain
+  - https://commons.wikimedia.org/wiki/File:Aesculap_scalpel_handle_No.3.jpg — Symposius, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Allis-Coakley_Tonsil_Forceps_of_Dr._John_Hersel_Gladney_-_DPLA_-_a4261f0460f3b9818d9c53cdbf9b647d_(page_1).jpg — Storz, Public domain
+  - https://commons.wikimedia.org/wiki/File:Allis_Tissue_Forceps_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_8aa5cccfabef1dbbebe87fa21121859b_(page_1).jpg — , Public domain
+  - https://commons.wikimedia.org/wiki/File:Allis_tissue_forceps1.jpg — Sarindam7, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Costotome.jpg — Tony Slavotinek, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Cusco%27s_selfretaining_bivalve_vaginal_speculum_behind.jpg — Sarindam7, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Debakey_forceps.jpg — Phyo WP, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Disposable_scalpel-small.jpg — real name: Nadina Wiórkiewicz pl.wiki: Nadine90 commons: Nadine90, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Doyen%27s_Retractor.jpg — Sarindam7, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Doyen_Rib_Raspatory_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_1819869cec039db4dc1b445b743e3a63_(page_1).jpg — , Public domain
+  - https://commons.wikimedia.org/wiki/File:Doyen_Rib_Raspatory_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_71e24758d579f85e36426ff0cf393ddc_(page_4).jpg — , Public domain
+  - https://commons.wikimedia.org/wiki/File:Foerster_forceps.jpg — No machine-readable author provided. Pascal666 assumed (based on copyright claims)., CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Forceps_a_tracteur._Tarnier_(1877_France)_et_Dewey_(1900_GB_et_USA).JPG — B. Seguy, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Jansen-Middleton_Septum_Forceps_of_Dr._John_Hersel_Gladney_-_DPLA_-_7e6207fa0479f721d7dc3a0cad04ea93_(page_2).jpg — Kny-Scheerer Company, Public domain
+  - https://commons.wikimedia.org/wiki/File:Kocher%27s_forceps_with_toothed_jaw.jpg — Sarindam7, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Mayo_scissors.jpg — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Mayo_scissors_02.jpg — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Mayo_surgical_scissors.jpg — آرمین, Public domain
+  - https://commons.wikimedia.org/wiki/File:Medical_Instruments_O%26G_Upper-Long_straight_haemostatic_forceps_Lower-Kocher%27s_haemostatic_forceps.jpg — Sarindam7, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Medical_instrument_Eye_Barraquer%27s_needle_holder.jpg — Sarindam7, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Medical_instrument_Scalpel_01.JPG — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Metzenbaum_scissors.jpg — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Metzenbaum_scissors_04.jpg — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Needle_Holder.jpg — دماوندی, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:P%C3%A9an-type_artery_forceps,_Paris,_France,_1820-1866_Wellcome_L0057819.jpg — , CC BY 4.0
+  - https://commons.wikimedia.org/wiki/File:Pean.jpg — Baran Ivo, Public domain
+  - https://commons.wikimedia.org/wiki/File:Sauerbruch-Frey_Forceps_01.jpg — AfroBrazilian, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Scalpel_%26_Scalpel_Handles.jpg — SnowBink, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Scalpel_01.jpg — Saltanat ebli, CC0
+  - https://commons.wikimedia.org/wiki/File:Scalpel_handle_-_YDEA_-_58137.jpg — anonymous, CC0
+  - https://commons.wikimedia.org/wiki/File:Scalpel_handle_3.jpg — Phyo WP, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Sim%27s_double-bladed_vaginal_speculum.jpg — Sarindam7, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Sim%27s_double-bladed_vaginal_speculum1.jpg — Sarindam7, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Surgical_Scissors_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_1258cf434c9f32a53ed10b2cbc1d460e_(page_1).jpg — A.S. Aloe and Company, Public domain
+  - https://commons.wikimedia.org/wiki/File:Surgical_Scissors_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_1258cf434c9f32a53ed10b2cbc1d460e_(page_2).jpg — A.S. Aloe and Company, Public domain
+  - https://commons.wikimedia.org/wiki/File:Surgical_Scissors_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_1a5eeb73ab0a7f0530c7d087966e62ac_(page_1).jpg — J. Sklar Manufacturing, Public domain
+  - https://commons.wikimedia.org/wiki/File:Surgical_Scissors_of_Dr._James_M._Whittico,_Jr._-_DPLA_-_9cdd8572bf8c2c187d4d73a7132c50c8_(page_2).jpg — , Public domain
+  - https://commons.wikimedia.org/wiki/File:Surgical_retractor_Orem.jpg — Olek Remesz (wiki-pl: Orem, commons: Orem), CC BY-SA 2.5
+  - https://commons.wikimedia.org/wiki/File:Titanium_Castroveijo_Needle_holders.jpg — Bszsurgico, CC BY-SA 3.0
+  - https://commons.wikimedia.org/wiki/File:Vaginal_speculum_Collin_-_easy_opening.jpg — Lupus in Saxonia, CC BY-SA 4.0
+  - https://commons.wikimedia.org/wiki/File:Weitlaner_Retraktor.jpg — MacPiek, CC BY 3.0
+  - https://www.flickr.com/photos/55497864@N00/27670256268 — Brett Jordan, by 2.0
+  - https://www.flickr.com/photos/55497864@N00/41499212992 — Brett Jordan, by 2.0
+
+Kept out of training to measure the result: the kit photos of "Automated Recognition of
+Surgical Instruments" (in v3c, the measured twin of this model), 20 % of SURGICAL TOOLS,
+the test parts of the Roboflow sets.
